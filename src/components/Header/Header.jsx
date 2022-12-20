@@ -1,4 +1,5 @@
 import React from "react";
+import pelisLogo from "./../../assets/pelis-logo.png";
 import "./Header.scss";
 
 function Header(props) {
@@ -7,7 +8,10 @@ function Header(props) {
 
   return (
     <div className="header-container">
-      <h1 className="header-title">Pelis</h1>
+      <div className="title-logo">
+        <img className="logo" src={pelisLogo} />
+        <h1 className="header-title">Pelis</h1>
+      </div>
       <div className="hamburger-menu">
         <input id="menu__toggle" type="checkbox" />
         <label className="menu__btn" htmlFor="menu__toggle">
@@ -24,6 +28,9 @@ function Header(props) {
             <p className="menu__item" onClick={handleClick}>
               Movies
             </p>
+          </li>
+          <li>
+            <img src={pelisLogo} />
           </li>
         </ul>
       </div>

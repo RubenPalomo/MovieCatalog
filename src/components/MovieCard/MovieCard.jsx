@@ -4,9 +4,8 @@ import axios from "axios";
 import "./MovieCard.scss";
 
 function MovieCard(props) {
-  const APIKey = "BkbwaEJqFd5luqdSQUD18JHOA5eNa1BUeMqZQMMg";
   const imgLink = `https://cdn.watchmode.com/posters/0${props.id}_poster_w185.jpg`;
-  const infoLink = `https://api.watchmode.com/v1/title/${props.id}/details/?apiKey=${APIKey}&append_to_response=sources`;
+  const infoLink = `https://api.watchmode.com/v1/title/${props.id}/details/?apiKey=${props.APIKey}&append_to_response=sources`;
   const [info, setInfo] = useState("");
   const getInfo = () =>
     axios.get(infoLink).then((response) => setInfo(response.data));
@@ -50,9 +49,11 @@ function MovieCard(props) {
               <strong>Synopsis: </strong>
               {info.plot_overview}
             </p>
-            <p className="linktrailer" onClick={goToTrailer}>
-              Trailer
-            </p>
+            {info.trailer && (
+              <p className="linktrailer" onClick={goToTrailer}>
+                Trailer
+              </p>
+            )}
           </div>
         </div>
       </Popup>

@@ -1,36 +1,66 @@
 .home-container {
   width: 100%;
+  margin-top: 7.9vh;
   text-align: center;
 }
 
 .scroll {
-  overflow-x: hidden;
+  overflow-x: auto;
+  box-sizing: border-box;
   scroll-behavior: smooth;
-  border: 1px solid black;
+  border: 1px solid rgb(255, 255, 255);
   height: 80vh;
-  width: 99.8%;
+  width: 99.9%;
   text-align: center;
 }
 
-form button {
-  background: rgb(238, 174, 202);
-  background: radial-gradient(
-    circle,
-    rgb(255, 149, 195) 80%,
-    rgba(148, 187, 233, 1) 100%
-  );
-  border-radius: 5px;
+.scroll::-webkit-scrollbar {
+  -webkit-appearance: none;
 }
 
-form input {
-  border: 1px solid black;
-  margin: 0.1em;
+.scroll::-webkit-scrollbar:vertical {
+  width: 10px;
+}
+
+.scroll::-webkit-scrollbar-button:increment,
+.contenedor::-webkit-scrollbar-button {
+  display: none;
+}
+
+.scroll::-webkit-scrollbar:horizontal {
+  height: 10px;
+}
+
+.scroll::-webkit-scrollbar-thumb {
+  background-color: #797979;
+  border-radius: 20px;
+  border: 2px solid #f1f2f3;
+}
+
+.scroll::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+
+form button {
+  height: 25px;
+  color: white;
+  background: rgb(245, 120, 120);
+  border-radius: 5px;
+  -webkit-transition: background-color 0.5s ease-out;
+  -moz-transition: background-color 0.5s ease-out;
+  -o-transition: background-color 0.5s ease-out;
+  transition: background-color 0.5s ease-out;
 }
 
 form button:hover {
   cursor: pointer;
   color: white;
-  filter: brightness(0.9);
+  background: rgb(238, 174, 202);
+}
+
+form input {
+  border: 1px solid black;
+  margin: 0.1em;
 }
 
 .returnImg {

@@ -9,7 +9,7 @@ import returnImg from "./../../assets/returnImg.png";
 import "./Home.scss";
 
 function Home() {
-  const APIKey = "BkbwaEJqFd5luqdSQUD18JHOA5eNa1BUeMqZQMMg";
+  const APIKey = "oj9hXQszaFkcPFimmv4e0a9aTCOvF4GFlibJQSCu";
   const baseURLPlatforms = `https://api.watchmode.com/v1/sources/?apiKey=${APIKey}`;
   const baseURLMovies = `https://api.watchmode.com/v1/list-titles/?apiKey=${APIKey}`;
   const searchURL = `https://api.watchmode.com/v1/search/?apiKey=${APIKey}&search_field=name&search_value=`;
@@ -47,58 +47,47 @@ function Home() {
     axios.get(baseURLPlatforms).then((response) => setPlatforms(response.data));
   }, []);
 
-  if (search != "platforms") {
-    return (
-      <div className="home-container">
-        <Header changeSearch={setSearch} />
-        <div className="scroll">
-          <h1 id="title" ref={nodeRef}>
-            Movies
-          </h1>
+  return (
+    <div className="home-container">
+      <Header changeSearch={setSearch} />
+      <div className="scroll">
+        <h1 id="title" ref={nodeRef}>
+          {search != "platforms" ? "Movies" : "Platforms"}
+        </h1>
+        {search != "platforms" ? (
           <form onSubmit={handleSubmit}>
             <input></input>
             <button type="submit">Search</button>
           </form>
-          {movies.map((element) => (
-            <MovieCard
-              key={element.id}
-              id={element.id}
-              title={element.title}
-              year={element.year}
-              type={element.type}
-            />
-          ))}
-          <a href="#title">
-            {!isVisible && <img className="returnImg" src={returnImg} />}
-          </a>
-        </div>
-        <Footer />
+        ) : (
+          <p />
+        )}
+        {search != "platforms"
+          ? movies.map((element) => (
+              <MovieCard
+                key={element.id}
+                APIKey={APIKey}
+                id={element.id}
+                title={element.title}
+                year={element.year}
+                type={element.type}
+              />
+            ))
+          : platforms.map((element) => (
+              <PlatformCard
+                key={element.id}
+                name={element.name}
+                logo={element.logo_100px}
+                url={element.ios_appstore_url}
+              />
+            ))}
+        <a href="#title">
+          {!isVisible && <img className="returnImg" src={returnImg} />}
+        </a>
       </div>
-    );
-  } else {
-    return (
-      <div className="home-container">
-        <Header changeSearch={setSearch} />
-        <div className="scroll">
-          <h1 id="title" ref={nodeRef}>
-            Platforms
-          </h1>
-          {platforms.map((element) => (
-            <PlatformCard
-              key={element.id}
-              name={element.name}
-              logo={element.logo_100px}
-              url={element.ios_appstore_url}
-            />
-          ))}
-          <a href="#title">
-            {!isVisible && <img className="returnImg" src={returnImg} />}
-          </a>
-        </div>
-        <Footer />
-      </div>
-    );
-  }
+      <Footer />
+    </div>
+  );
 }
 
 export default Home;
