@@ -21,19 +21,21 @@ function MovieCard(props) {
     );
 
   return (
-    <div className="main-container" onMouseEnter={getInfo}>
+    <div className="main-container flex" onMouseEnter={getInfo}>
       <Popup
         position="center"
         trigger={
-          <div className="card-container">
+          <div className="card-container flex">
             <img className="imgMovie" src={imgLink} />
-            <h3>{props.title}</h3>
-            <p>
-              <strong>Year:</strong> {props.year}
-            </p>
-            <p>
-              <strong>Type:</strong> {props.type}
-            </p>
+            <div className="info">
+              <h3 className="props">{props.title}</h3>
+              <p className="props">
+                <strong>Year:</strong> {props.year}
+              </p>
+              <p className="props">
+                <strong>Type:</strong> {props.type}
+              </p>
+            </div>
           </div>
         }
       >

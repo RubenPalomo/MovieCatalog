@@ -9,7 +9,7 @@ import returnImg from "./../../assets/returnImg.png";
 import "./Home.scss";
 
 function Home() {
-  const APIKey = "oj9hXQszaFkcPFimmv4e0a9aTCOvF4GFlibJQSCu";
+  const APIKey = "OGjZS5swP8X78qJLhv44LmjYpDdvKm6l0FE3QbW8";
   const baseURLPlatforms = `https://api.watchmode.com/v1/sources/?apiKey=${APIKey}`;
   const baseURLMovies = `https://api.watchmode.com/v1/list-titles/?apiKey=${APIKey}`;
   const searchURL = `https://api.watchmode.com/v1/search/?apiKey=${APIKey}&search_field=name&search_value=`;

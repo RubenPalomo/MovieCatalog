@@ -11,7 +11,7 @@
     rgba(255, 255, 255, 1) 100%
   );
   margin-top: -11.8vh;
-  z-index: 0;
+  z-index: 1;
 }
 
 .title-logo {
@@ -67,6 +67,9 @@
   height: 26px;
   cursor: pointer;
   z-index: 1;
+}
+.menu__btn:hover {
+  filter: invert(0.5);
 }
 .menu__btn > span,
 .menu__btn > span::before,

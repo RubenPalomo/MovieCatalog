@@ -1,13 +1,33 @@
 .center {
   display: flex;
-  margin: 8em;
   justify-content: center;
 }
 
+.flex {
+  display: flex;
+  text-align: left;
+  justify-content: left;
+  min-width: 500px;
+}
+
 .imgMovie {
-  width: 20vw;
-  margin-top: 2vh;
+  position: relative;
+  height: 26vh;
+  width: 30%;
+  min-width: 100px;
+  margin: auto;
   border-radius: 10px;
+}
+
+.info {
+  padding-top: 2vh;
+  width: 60%;
+  margin-left: 5px;
+  text-align: left;
+}
+
+.props {
+  padding-top: 2vh;
 }
 
 .spinner {
