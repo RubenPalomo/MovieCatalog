@@ -1,0 +1,48 @@
+.home-container {
+  width: 100%;
+  text-align: center;
+}
+
+.scroll {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  border: 1px solid black;
+  height: 80vh;
+  width: 99.8%;
+  text-align: center;
+}
+
+form button {
+  background: rgb(238, 174, 202);
+  background: radial-gradient(
+    circle,
+    rgb(255, 149, 195) 80%,
+    rgba(148, 187, 233, 1) 100%
+  );
+  border-radius: 5px;
+}
+
+form input {
+  border: 1px solid black;
+  margin: 0.1em;
+}
+
+form button:hover {
+  cursor: pointer;
+  color: white;
+  filter: brightness(0.9);
+}
+
+.returnImg {
+  display: flex;
+  position: absolute;
+  transform: rotate(90deg);
+  width: 70px;
+  right: 20px;
+  bottom: 12vh;
+}
+
+.returnImg:hover {
+  cursor: pointer;
+  filter: invert(0.2);
+}

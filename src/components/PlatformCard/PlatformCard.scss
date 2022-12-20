@@ -1,0 +1,27 @@
+.main-container {
+  padding-left: 30vw;
+}
+
+.card-container {
+  background: rgb(255, 255, 255);
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 1) 25%,
+    rgba(185, 250, 247, 1) 180%
+  );
+  border: 2px solid black;
+  border-radius: 20px;
+  margin-top: 1em;
+  padding: 0.4em;
+  width: 50%;
+  min-width: 100px;
+}
+
+.card-container:hover {
+  cursor: pointer;
+  filter: invert(0.05);
+}
+
+.imgPlatform {
+  border-radius: 30px;
+}

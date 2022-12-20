@@ -1,0 +1,15 @@
+.error404 {
+  background-color: beige;
+  height: 90vh;
+  padding-top: 10vh;
+  font-size: 1.5em;
+}
+
+.error404 img {
+  display: flex;
+  position: absolute;
+  right: 10vw;
+  bottom: 10vh;
+  transform: rotate(-10deg);
+  width: 60vh;
+}

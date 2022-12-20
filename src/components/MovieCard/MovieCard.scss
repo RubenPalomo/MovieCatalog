@@ -1,0 +1,57 @@
+.center {
+  display: flex;
+  margin: 8em;
+  justify-content: center;
+}
+
+.imgMovie {
+  width: 20vw;
+  margin-top: 2vh;
+  border-radius: 10px;
+}
+
+.spinner {
+  margin-right: 3em;
+  width: 64px;
+  height: 64px;
+  border: 8px solid;
+  border-color: #3d5af1 transparent #3d5af1 transparent;
+  border-radius: 50%;
+  animation: spin-anim 1.2s linear infinite;
+}
+
+@keyframes spin-anim {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.popup {
+  background-color: rgb(255, 255, 165);
+  text-align: center;
+  margin-top: -10vh;
+  padding-top: 2vh;
+  width: 30vw;
+  height: auto;
+  border-radius: 10px;
+}
+
+.infoScroll {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  text-align: left;
+  padding-left: 1vw;
+}
+
+.linktrailer {
+  font-style: italic;
+  color: blue;
+  text-align: center;
+}
+
+.linktrailer:hover {
+  cursor: pointer;
+}
