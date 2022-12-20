@@ -9,7 +9,7 @@ import returnImg from "./../../assets/returnImg.png";
 import "./Home.scss";
 
 function Home() {
-  const APIKey = "OGjZS5swP8X78qJLhv44LmjYpDdvKm6l0FE3QbW8";
+  const APIKey = "entgicsxNDOtbK0surWRxRxezuXM7pvr5vhiJiJe";
   const baseURLPlatforms = `https://api.watchmode.com/v1/sources/?apiKey=${APIKey}`;
   const baseURLMovies = `https://api.watchmode.com/v1/list-titles/?apiKey=${APIKey}`;
   const searchURL = `https://api.watchmode.com/v1/search/?apiKey=${APIKey}&search_field=name&search_value=`;
@@ -26,12 +26,9 @@ function Home() {
         .get(baseURLMovies)
         .then((response) => setMovies(response.data.titles));
     } else {
-      axios.get(searchURL + e.target[0].value).then((response) => {
-        let result = response.data.title_results;
-        result.map((element) => (element.title = element.name));
-
-        setMovies(result);
-      });
+      axios
+        .get(searchURL + e.target[0].value)
+        .then((response) => setMovies(response.data.title_resultsult));
     }
   };
 
@@ -63,9 +60,9 @@ function Home() {
           <p />
         )}
         {search != "platforms"
-          ? movies.map((element) => (
+          ? movies.map((element, index) => (
               <MovieCard
-                key={element.id}
+                key={index}
                 APIKey={APIKey}
                 id={element.id}
                 title={element.title}
@@ -73,9 +70,9 @@ function Home() {
                 type={element.type}
               />
             ))
-          : platforms.map((element) => (
+          : platforms.map((element, index) => (
               <PlatformCard
-                key={element.id}
+                key={index}
                 name={element.name}
                 logo={element.logo_100px}
                 url={element.ios_appstore_url}
