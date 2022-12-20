@@ -1,4 +1,7 @@
-# Getting Started with Create React App
+# Movie Catalog
+
+Web page created with react. It has an API connection that makes the user able to search titles.
+<hr />
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
